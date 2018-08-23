@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import React, { Component } from "react";
 import fetch from "unfetch";
 import {
@@ -9,7 +10,7 @@ import {
   Container,
   Header
 } from "gitstar-components";
-
+dotenv.config()
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
 const AUTH_API_URI = process.env.REACT_APP_AUTH_API_URI;
@@ -28,7 +29,7 @@ class App extends Component {
       });
       return;
     }
-    const code =
+    /*const code =
       window.location.href.match(/?code=(.*)/) &&
       window.location.href.match(/?code=(.*)/)[1];
     if (code) {
@@ -42,7 +43,7 @@ class App extends Component {
             status: STATUS.FINISHED_LOADING
           });
         });
-    }
+    }*/
   }
   render() {
     return (
